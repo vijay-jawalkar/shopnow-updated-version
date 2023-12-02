@@ -5,7 +5,7 @@ import { ProductCard } from "../../components";
 import { FilterBar } from "./components/FilterBar";
 import { initialProductList } from "../../redux/slice/filterSlice";
 import { useDispatch, useSelector } from "react-redux";
-// import { useFilter } from "../../context";
+
 import { getProductList } from "../../services";
 import { useTitle } from "../hooks/useTitle";
 
