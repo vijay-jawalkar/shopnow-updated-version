@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
+
 import { getUser } from "../../../services";
 import { useTitle } from "../../hooks/useTitle";
+
+import { toast } from "react-toastify";
 
 import { clearCart } from "../../../redux/slice/cartSlice";
 import { useDispatch } from "react-redux";
