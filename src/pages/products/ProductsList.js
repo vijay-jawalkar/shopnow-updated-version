@@ -15,7 +15,7 @@ export const ProductsList = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.filterState)
 
-  const [ productList, setProductList ] = useState([]);
+  const [ productList, setProductList ] = useState([]);  //eslint-disable-line
   const [show, setShow] = useState(false);
  
   // const [products, setProducts] = useState([]);

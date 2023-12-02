@@ -1,5 +1,5 @@
 // import { useFilter } from "../../../context/FilterContext";
-import { initialProductList, setSortBy, setRatings, categories, setBestSeller, setInStock, clearFilter } from "../../../redux/slice/filterSlice";
+import {  setSortBy, setRatings, categories, setBestSeller, setInStock, clearFilter } from "../../../redux/slice/filterSlice";
 import { useDispatch, useSelector } from "react-redux";
 export const FilterBar = ({ setShow }) => {
   // const { state, dispatch } = useFilter();
