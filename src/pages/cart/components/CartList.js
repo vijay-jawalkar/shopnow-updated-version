@@ -24,7 +24,7 @@ export const CartList = () => {
     }
 
     fetchUser();
-    // console.log(user)
+    
   }, []);
 
   async function handleOrder() {
