@@ -40,7 +40,7 @@ export const CartList = () => {
   }
 
   const paymentHandler = async (e) => {
-    const response = await fetch("http://localhost:8000/payment/orders", {
+    const response = await fetch(`${process.env.REACT_APP_HOST}/payment/orders`, {
       method: "POST",
       body: JSON.stringify({
         amount: total * 100,
@@ -74,7 +74,7 @@ export const CartList = () => {
         };
 
         const validateResponse = await fetch(
-          "http://localhost:8000/payment/validate",
+          `${process.env.REACT_APP_HOST}/payment/validate`,
           {
             method: "POST",
             body: JSON.stringify(body),
