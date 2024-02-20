@@ -24,7 +24,7 @@ export const Search = ({ SetShowSearch }) => {
     <div className="mx-auto max-w-screen-xl p-2 my-5">
       <form onSubmit={handleSubmit} className="flex items-center">
         <div className="relative w-full">
-          <span className="bi bi-search flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"></span>
+          <span className="bi bi-search flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none text-zinc-200"></span>
           <input
             ref={searchRef}
             name="q"

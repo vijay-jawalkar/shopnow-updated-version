@@ -15,7 +15,7 @@ export const FilterBar = ({ setShow }) => {
     <section className="filter">
       <div
         id="drawer-disable-body-scrolling"
-        className={`fixed z-40 h-screen p-5 overflow-y-auto bg-white w-72 dark:bg-gray-800 transition-transhtmlForm left-0 top-0 transhtmlForm-none`}
+        className={`fixed z-40 h-screen p-5 overflow-y-auto bg-white w-72 dark:bg-zinc-900 transition-transhtmlForm left-0 top-0 transhtmlForm-none`}
         tabIndex="-1"
         aria-labelledby="drawer-disable-body-scrolling-label"
         aria-modal="true"
@@ -23,7 +23,7 @@ export const FilterBar = ({ setShow }) => {
       >
         <h5
           id="drawer-disable-body-scrolling-label"
-          className="text-base font-semibold text-gray-500 uppercase dark:text-gray-400"
+          className="text-base font-semibold text-gray-500 uppercase dark:text-zinc-100"
         >
           Filters
         </h5>
@@ -32,7 +32,7 @@ export const FilterBar = ({ setShow }) => {
           type="button"
           data-drawer-dismiss="drawer-disable-body-scrolling"
           aria-controls="drawer-disable-body-scrolling"
-          className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+          className="dark:text-zinc-100 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
         >
           <svg
             aria-hidden="true"
