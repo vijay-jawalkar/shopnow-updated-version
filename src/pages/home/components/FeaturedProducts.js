@@ -9,12 +9,16 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import CardSkeleton from "../../../components/CardSkeleton";
+
 export const FeaturedProducts = () => {
   const [products, setProducts] = useState([]);
+  const [ isLoading, setIsLoading] = useState(true)
+
 
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -25,6 +29,7 @@ export const FeaturedProducts = () => {
       try {
         const data = await getFeaturedList();
         setProducts(data);
+        setIsLoading(false)
       } catch (error) {
         toast(error.message, { closeButton: true, position: "bottom-center" });
       }
@@ -38,7 +43,15 @@ export const FeaturedProducts = () => {
         Featured Latest Products
       </h1>
 
-      <div className="">
+      <div className={isLoading ? "flex" : ""}>
+        {
+          isLoading && (
+          <>
+          <CardSkeleton/>
+        
+          </>
+          )
+        }
         <Slider {...settings}>
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />

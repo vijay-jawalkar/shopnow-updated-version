@@ -9,6 +9,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProductList } from "../../services";
 import { useTitle } from "../hooks/useTitle";
 
+import CardSkeleton from "../../components/CardSkeleton";
+
+
 export const ProductsList = () => {
   // const { productsList, initialProductList } = useFilter();
 
@@ -17,6 +20,7 @@ export const ProductsList = () => {
 
   const [ productList, setProductList ] = useState([]);  //eslint-disable-line
   const [show, setShow] = useState(false);
+  const [isLoading, setIsLoading] = useState(true)
  
   // const [products, setProducts] = useState([]);
   const search  = useLocation().search;
@@ -36,6 +40,7 @@ export const ProductsList = () => {
       // initialProductList(data);
       dispatch(initialProductList(data))
       setProductList(data)
+      setIsLoading(false)
     }catch(error){
       toast(error.message, {closeButton : true, position: "bottom-center"});
     }
@@ -73,9 +78,30 @@ export const ProductsList = () => {
           </span>
         </div>
         <div className="flex flex-wrap justify-center lg:flex-row">
-          {state.productsList.length && state.productsList.map((product) => (
+
+        {
+          isLoading && (
+            <>
+          <CardSkeleton/>
+            <CardSkeleton/>
+            <CardSkeleton/>
+            <CardSkeleton/>
+            <CardSkeleton/>
+            <CardSkeleton/>
+            
+            </>
+           
+          )
+        }
+
+       
+
+          {state.productsList.length ? state.productsList.map((product) => (
             <ProductCard key={product.id} product={product} />
-          ))}
+          ))
+        :
+        <span></span>
+        }
         </div>
 
       </section>
