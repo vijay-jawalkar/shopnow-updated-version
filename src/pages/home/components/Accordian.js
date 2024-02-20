@@ -57,8 +57,8 @@ export const Accordian = ({ faq }) => {
             className=""
             aria-labelledby="accordion-flush-heading-1"
           >
-            <div className="py-5 border-b border-gray-200 dark:border-gray-700">
-              <p className="text-lg mb-2 text-gray-500 dark:text-gray-400">
+            <div className="py-5 border-b border-gray-200 dark:border-gray-700 ">
+              <p className=" mb-2 text-gray-500 dark:text-gray-400 text-medium">
                 {answer}
               </p>
             </div>

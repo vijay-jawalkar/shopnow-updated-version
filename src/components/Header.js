@@ -27,12 +27,12 @@ export const Header = () => {
 
   return (
     <header>
-      <nav class="bg-white dark:bg-gray-900">
+      <nav class="bg-white dark:bg-zinc-900">
         <div class="border-b border-slate-200 dark:border-b-0 flex flex-wrap justify-between items-center mx-auto max-w-screen-xl px-4 md:px-6 py-3">
           <Link to="/" class="flex items-center">
-            <img src={Logo} class="mr-3 h-10" alt="CodeBook Logo" />
-            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-              Shop Now
+            <img src={Logo} class="mr-3 h-10 rounded-full" alt="CodeBook Logo" />
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white font-sans">
+              ShopNow
             </span>
           </Link>
           <div class="flex items-center relative">

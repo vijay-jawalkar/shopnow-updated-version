@@ -13,7 +13,7 @@ export default function App() {
       <ScrollToTop />
 
         <Header />
-        <AllRoutes />
+        <AllRoutes/>
         <Footer />
    
     </BrowserRouter>

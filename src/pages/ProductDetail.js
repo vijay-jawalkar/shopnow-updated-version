@@ -7,12 +7,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { Rating } from "../components/elements/Rating";
 import { getProduct } from "../services";
 import { useTitle } from "./hooks/useTitle";
+import ProductDetailSkeleton from "../components/ProductDetailSkeleton";
 import { toast } from "react-toastify";
 
 
 export const ProductDetail = () => {
   const [product, setProduct] = useState({});
   const [inCart, setInCart] = useState(false);
+  const [ isLoading, setIsLoading ] = useState(true)
+
   const dispatch = useDispatch();
   const cartList = useSelector( (state) => state.cartState.cartList)
  
@@ -27,6 +30,7 @@ export const ProductDetail = () => {
       try{
         const data = await getProduct(id);
         setProduct(data);
+        setIsLoading(false)
       }catch(error){
         toast(error.message, {closeButton : true, position: "bottom-center"});
       }
@@ -60,7 +64,14 @@ useTitle(product.name);
 
   return (
     <main>
-      <section>
+      {
+       isLoading ?
+       (
+        <ProductDetailSkeleton/>
+       ) 
+       :
+       (
+        <section>
         <h1 className="mt-10 mb-5 text-4xl text-center font-bold text-gray-900 dark:text-slate-200">
           {product.name}
         </h1>
@@ -133,6 +144,9 @@ useTitle(product.name);
           </div>
         </div>
       </section>
+       )
+      }
+     
     </main>
   );
 };

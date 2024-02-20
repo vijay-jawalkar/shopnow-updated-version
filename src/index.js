@@ -17,7 +17,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode >
     
-    <div className = "dark:bg-cyan-900">
+    <div className = "dark:bg-zinc-800">
    
     <ToastContainer position={"bottom-right"}/>
     <Provider store = {store}>
